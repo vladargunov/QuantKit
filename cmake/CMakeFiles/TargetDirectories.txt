@@ -1,0 +1,3 @@
+/Users/vladargunov/projects/cplusplus/QuantKit/cmake/CMakeFiles/QuantKit.dir
+/Users/vladargunov/projects/cplusplus/QuantKit/cmake/CMakeFiles/edit_cache.dir
+/Users/vladargunov/projects/cplusplus/QuantKit/cmake/CMakeFiles/rebuild_cache.dir
