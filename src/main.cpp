@@ -19,26 +19,52 @@
 
 int main() {
 
-   // double a_coeff_, double b_coeff_, double sigma_coeff_, double k_coeff_, double phi_coeff_
-   auto o = OptimalExecution(.6,.1, 0.1,.1,.6);
-   // num_diff_t_, int num_diff_q_
-   o.set_num_steps(100,100);
-   // true_impact, trading_speed, impact_nonlinearity
-   o.compute_liquidation("Linear", 1);
-   Eigen::VectorXd h = o.get_value_process();
-   std::cout << "Value Process\n" << h << "\n";
-   Eigen::VectorXd j = o.get_optimal_speed_process();
-   std::cout << "Speed Process\n" << j << "\n";
-   Eigen::VectorXd s = o.get_stock_process();
-   std::cout << "Stock Process\n" << s << "\n";
-   Eigen::VectorXd c = o.get_cash_process();
-   std::cout << "Cash Process\n" << c << "\n";
-   Eigen::VectorXd i = o.get_inventory_process();
-   std::cout << "Inventory Process\n" << i << "\n";
+  // Generation of option prices
+  // auto o = Option("Call");
+  // o.set_tn(1);
+  // o.set_s_max(100);
+  // o.set_numdiff_t(10);
+  // o.set_numdiff_s(10);
+  // o.set_volatility(.1);
+  // o.set_interest_rate(.15);
+  // o.set_strike(50);
+  // o.set_stock_boundary_condition("Dirichlet");
+  // o.fixed_difference_step();
+  //
+  // o.compute_solution_grid("Crank-Nicholson");
+  // o.print_solution_grid();
 
+
+  // Heston option Monte-Carlo Simulation
+  // auto h = HestonOption("Call", 1, 10, 100, 50);
+  // h.set_params_stock_process(45, .1);
+  // h.set_prams_variance_process(.2, 1, 1, .25, .5);
+  // auto pr = h.compute_price();
+  //
+  // std::cout << pr << "\n";
+
+
+  // Generation of optimal execution paths
+   // double a_coeff_, double b_coeff_, double sigma_coeff_, double k_coeff_, double phi_coeff_
+   // auto o = OptimalExecution(.6,.1, 0.1,.1,.6);
+   // // num_diff_t_, int num_diff_q_
+   // o.set_num_steps(100,100);
+   // // true_impact, trading_speed, impact_nonlinearity
+   // o.compute_liquidation("Linear", 1);
+   // Eigen::VectorXd h = o.get_value_process();
+   // std::cout << "Value Process\n" << h << "\n";
+   // Eigen::VectorXd j = o.get_optimal_speed_process();
+   // std::cout << "Speed Process\n" << j << "\n";
+   // Eigen::VectorXd s = o.get_stock_process();
+   // std::cout << "Stock Process\n" << s << "\n";
+   // Eigen::VectorXd c = o.get_cash_process();
+   // std::cout << "Cash Process\n" << c << "\n";
+   // Eigen::VectorXd i = o.get_inventory_process();
+   // std::cout << "Inventory Process\n" << i << "\n";
+   //
    // std::cout << o.get_value_matrix();
 
-    // // save results in a matrix 500 results
+    // Generate 500 optimal execution scenarios and save it in the csv files
     // Eigen::MatrixXd nonlinear_speed_csv_value,nonlinear_speed_csv_optimal_speed, nonlinear_speed_csv_stock, nonlinear_speed_csv_cash, nonlinear_speed_csv_inventory;
     // nonlinear_speed_csv_value.resize(101,100); nonlinear_speed_csv_optimal_speed.resize(101,100); nonlinear_speed_csv_stock.resize(101,100); nonlinear_speed_csv_cash.resize(101,100); nonlinear_speed_csv_inventory.resize(101,100);
     // Eigen::MatrixXd linear_speed_csv_value,linear_speed_csv_optimal_speed, linear_speed_csv_stock, linear_speed_csv_cash, linear_speed_csv_inventory;
